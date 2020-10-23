@@ -4,7 +4,7 @@ import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native'
 
 
 export default function App() {
-  let [joke, setJoke] = React.useState('')
+  let [joke, setJoke] = React.useState('Click GET JOKE!')
 
   const fetchApiCall = () => {
     fetch("https://icanhazdadjoke.com/", {
