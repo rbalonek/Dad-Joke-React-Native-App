@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 
 
@@ -32,8 +32,8 @@ export default function App() {
         </View>
       </TouchableHighlight>
       <StatusBar style="auto" />
-      <View>
-        <Text style={styles.joke}>{joke}</Text>
+      <View style={styles.jokeContainer}>
+        <Text style={styles.joke}>"{joke}"</Text>
       </View>
     </View>
     
@@ -43,7 +43,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey',
+    backgroundColor: '#aaa',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -51,24 +51,28 @@ const styles = StyleSheet.create({
     position: "absolute",
     top:100,
     fontSize: 35,
-    color: '#fff'
+    color: '#fff',
   },
   button: {
-    // position: 'absolute',
-    // top: 200,
     padding: 20,
+    paddingLeft: 100,
+    paddingRight:100,
     marginVertical: 25,
     backgroundColor: '#0645AD'
   },
   buttonText: {
     color: '#FFF'
   },
-  joke: {
-    fontSize: 25,
-    color: '#fff',
+  jokeContainer: {
+    backgroundColor: '#fff',
     position: 'relative',
     bottom: -100,
     padding: 20,
-
+    borderRadius: 5
+  },
+  joke: {
+    fontSize: 25,
+    color: 'black',
+    padding: 10,
   },
 });
