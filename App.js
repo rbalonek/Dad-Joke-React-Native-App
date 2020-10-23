@@ -1,13 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, TouchableHighlight, Image } from 'react-native';
 
 
 export default function App() {
 
   const fetchApiCall = () => {
-    fetch("https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=gin", {
-      "method": "GET"
+    fetch("https://api.airtable.com/v0/app9S6k06MQoTSJbG/mains?view=Grid%20view", {
+      "method": "GET",
+      "headers": {
+        Authorization: `Bearer keycwau4DQnYWB7cv`,
+      }
     })
       .then(response => response.json())
       .then(response => {
@@ -28,7 +31,11 @@ export default function App() {
         </View>
       </TouchableHighlight>
       <StatusBar style="auto" />
+      <View>
+      <Text></Text>
+      </View>
     </View>
+    
   );
 }
 
